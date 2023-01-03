@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] float speedLeftRigt;
     [SerializeField] float speedForward;
-    Camera camera;
     [SerializeField] CharacterController controller;
     Vector3 startPos;
     private void FixedUpdate()
     {
         controller.Move(speedForward* Time.deltaTime * Vector3.forward);
     }
-    private void Start()
-    {
-        camera = Camera.main;
-    }
+     
     private void OnMouseDown()
     {
         startPos = Input.mousePosition;
